@@ -15,7 +15,7 @@ $(document).ready(function(){
     var deadlineInput = $("#deadline-input").val();
     var newItem = new Item (titleInput, descriptionInput, addDateInput, deadlineInput);
 
-    $("ul#todo-list").append("<li><span class='todo-item'>"+newItem.title+"</span></li>");
+    $("ul#todo-list").append("<li id='u"+newItem.title+"'><span class='todo-item'>"+newItem.title+"</span><span class='glyphicon glyphicon-ok' aria-hidden='true'></span></li>");
 
     $("#title-input").val("");
     $("#description-input").val("");
@@ -30,5 +30,17 @@ $(document).ready(function(){
       $("#item-deadline").text(newItem.deadline);
     });
 
+    $(".glyphicon").last().click(function(){
+      $("#u"+newItem.title).remove();
+      $("ul#completed-list").append("<li><span class='completed-item'>"+newItem.title+"</span></li>");
+
+      $(".completed-item").last().click(function(){
+        // debugger;
+        $("#item-label").text(newItem.title);
+        $("#item-description").text(newItem.description);
+        $("#item-addDate").text(newItem.addDate);
+        $("#item-deadline").text(newItem.deadline);
+      });
+    });
   });
 });

@@ -6,3 +6,8 @@
 .todo-item:hover {
   cursor: pointer;
 }
+
+.glyphicon {
+  padding: 5px 5px 5px 5px;
+  color: purple;
+}
