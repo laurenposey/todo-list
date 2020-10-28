@@ -2,7 +2,7 @@
 
 #### A simple to-do list webapp.
 
-#### By Carl Egbert and Lauren Posey
+#### By Carl Egbert and Lauren Valkyrie
 
 ## Description
 
